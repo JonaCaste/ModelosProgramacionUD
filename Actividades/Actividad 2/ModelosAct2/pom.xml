@@ -11,4 +11,17 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.modelosact2.ModelosAct2</exec.mainClass>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+    </dependencies>
 </project>

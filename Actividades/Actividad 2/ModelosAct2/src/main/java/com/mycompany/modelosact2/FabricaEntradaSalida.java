@@ -4,32 +4,52 @@
  */
 package com.mycompany.modelosact2;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Estudiantes
  */
 
-abstract interface FabricaAbstractaEntradaSalida{
-    int generarEntrada(String texto);
-    void generarSalida(String salida);
+abstract class FabricaAbstractaEntradaSalida{
+    public abstract Entrada generarEntrada();
+    public abstract Salida generarSalida();
 }
 
-class FabricaConcretaEntradaSalida implements FabricaAbstractaEntradaSalida{
+class FabricaConcretaEntradaSalida extends FabricaAbstractaEntradaSalida{
 
     @Override
-    public int generarEntrada(String texto) {
-        Scanner sc = new Scanner(System.in);
-        generarSalida(texto);
-        int entrada = Integer.parseInt(sc.nextLine());
+    public Entrada generarEntrada() {
+        
+        Entrada entrada = new EntradaTeclado();
         
         return entrada;
     }
 
     @Override
-    public void generarSalida(String salida) {
-        System.out.println(salida);
+    public Salida generarSalida() {
+        
+        Salida salida = new SalidaPantalla();
+        
+        return salida;
     }
     
+}
+
+class FabricaConcretaEntradaSalidaExcel extends FabricaAbstractaEntradaSalida{
+
+    @Override
+    public Entrada generarEntrada() {
+        
+        Entrada entrada = new EntradaExcel();
+        
+        return entrada;
+    }
+    
+    @Override
+    public Salida generarSalida() {
+        
+        Salida salida = new SalidaExcel();
+        
+        return salida;
+    }
+
 }
