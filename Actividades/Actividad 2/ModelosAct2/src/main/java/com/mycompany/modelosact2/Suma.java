@@ -8,11 +8,11 @@ package com.mycompany.modelosact2;
  *
  * @author Estudiantes
  */
-public class Suma {
-    
-    public int operar(int op1, int op2){
-        int resultado = op1 + op2;
-        return resultado;
-    }
-    
-}
+//public class Suma {
+//    
+//    public int operar(int op1, int op2){
+//        int resultado = op1 + op2;
+//        return resultado;
+//    }
+//    
+//}

@@ -9,18 +9,18 @@ package com.mycompany.modelosact2;
  * @author jonas
  */
 
-abstract class FabricaAbstractaOperacionesBasicas{
-    public abstract Suma generarSuma();
-    //int restar(int op1, int op2);
-}
-
-class FabricaConcretaOperacionesBasicas extends FabricaAbstractaOperacionesBasicas{
-
-    @Override
-    public Suma generarSuma() {
-        
-        return new Suma();
-        
-    }
-
-}
+//abstract class FabricaAbstractaOperacionesBasicas{
+//    public abstract Suma generarSuma();
+//    //int restar(int op1, int op2);
+//}
+//
+//class FabricaConcretaOperacionesBasicas extends FabricaAbstractaOperacionesBasicas{
+//
+//    @Override
+//    public Suma generarSuma() {
+//        
+//        return new Suma();
+//        
+//    }
+//
+//}

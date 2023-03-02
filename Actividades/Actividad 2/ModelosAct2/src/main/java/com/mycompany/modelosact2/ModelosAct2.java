@@ -62,36 +62,45 @@ public class ModelosAct2 {
         
         mod.crearExcel();*/
         
-        FabricaAbstractaOperacionesBasicas fabricaOP = new FabricaConcretaOperacionesBasicas();
-        //referencia abstracta             objeto concreto                    
+        //referencia abstracta             objeto concreto  
         FabricaAbstractaEntradaSalida fabricaES = new FabricaConcretaEntradaSalida();//Sustitución de liscop
         
         Entrada entrada = fabricaES.generarEntrada();
         String contEntrada1 = entrada.setContenido();
         String contEntrada2 = entrada.setContenido();
-
         
         int op1 = Integer.parseInt(contEntrada1);
         int op2 = Integer.parseInt(contEntrada2);
+        
+        //FabricaAbstractaOperacionesBasicas fabricaOP = new FabricaConcretaOperacionesBasicas();
+        
+//        Suma suma = fabricaOP.generarSuma();
+//        int resultado = suma.operar(op1, op2);
+        
 
-        Suma suma = fabricaOP.generarSuma();
-        int resultado = suma.operar(op1, op2);
+
+        MetodoFabricacion fabricaOPSuma = new MetodoFabricacionSuma();
+        Operacion opSuma = fabricaOPSuma.generarOP();
+
+        int resultado = opSuma.operar(op1, op2);
         
-        fabricaES.generarSalida().imprimirContenido(Integer.toString(resultado));
+        Salida salida = fabricaES.generarSalida();
         
-        
-        // Excel
-        fabricaES = new FabricaConcretaEntradaSalidaExcel();
-        
-        fabricaES.generarSalida().imprimirContenido(Integer.toString(resultado));
-        
-        String contEntrada3 = fabricaES.generarEntrada().setContenido();
+        salida.imprimirContenido(Integer.toString(resultado));
         
         
-        //Pantalla
-        fabricaES = new FabricaConcretaEntradaSalida();
-        
-        fabricaES.generarSalida().imprimirContenido(contEntrada3);
+//        // Excel
+//        fabricaES = new FabricaConcretaEntradaSalidaExcel();
+//        
+//        fabricaES.generarSalida().imprimirContenido(Integer.toString(resultado));
+//        
+//        String contEntrada3 = fabricaES.generarEntrada().setContenido();
+//        
+//        
+//        //Pantalla
+//        fabricaES = new FabricaConcretaEntradaSalida();
+//        
+//        fabricaES.generarSalida().imprimirContenido(contEntrada3);
         
     }
 }
